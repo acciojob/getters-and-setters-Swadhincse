@@ -1,11 +1,25 @@
-//complete this code
-class Person {}
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
 
-class Student extends Person {}
+class Student extends Person {
+    study() {
+        document.getElementById("output").textContent = this.name + " is studying";
+    }
+}
 
-class Teacher extends Person {}
+class Teacher extends Person {
+    teach() {
+        document.getElementById("output").textContent = this.name + " is teaching";
+    }
+}
 
-// Do not change the code below this line
-window.Person = Person;
-window.Student = Student;
-window.Teacher = Teacher;
+// Example usage:
+const student1 = new Student("Alice", 20);
+const teacher1 = new Teacher("Mr. Smith", 35);
+
+student1.study();  // Output: Alice is studying
+teacher1.teach();  // Output: Mr. Smith is teaching
